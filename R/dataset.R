@@ -5,13 +5,13 @@
 #' @export
 
 uster_data_directory <- function() {
-  if(dir.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik")){
+  if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
     if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
-      directory <- read.csv("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")
-      }
-    } else {
-      directory <- read.csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
+      directory <- read.csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
     }
+  } else {
+    directory <- read.csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
+  }
   print(directory)
   }
 
@@ -24,9 +24,9 @@ uster_data_directory <- function() {
 #' @export
 
 uster_load_data <- function(id) {
-  if(dir.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik")){
+  if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
     if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
-      directory <- read.csv("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")
+      directory <- read.csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
     }
   } else {
     directory <- read.csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
@@ -36,4 +36,5 @@ uster_load_data <- function(id) {
   data <- read.csv(as.character(directory$URL))
   print(data)
    }
+
 
