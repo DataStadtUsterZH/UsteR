@@ -10,7 +10,7 @@ uster_load_data(id)
 \item{ID}{ID des gewünschten Datensatz}
 }
 \value{
-Die Summe von \code{x} und \code{y}. #' @examples
+Ein Dataset
 add(1, 1)
 }
 \description{
