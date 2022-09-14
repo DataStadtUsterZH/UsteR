@@ -5,7 +5,7 @@
 #' @return Das Farbschema als Vector
 #' add(1, 1)
 #' @export
-usteR_load_color <- function() {
+load_color <- function() {
 
 
   # Farben definieren

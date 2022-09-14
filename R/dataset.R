@@ -1,10 +1,10 @@
 #' Verzeichnis von Datensätzen
 #'
-#' @return Ein Verzeichnis der Verfügbaren Daten. Bei interner Nutzung in der Stadt sind auch (noch) nicht veröffentlichte Daten verfügbare.
+#' @return Ein Verzeichnis der verfügbaren Daten. Bei Nutzung im Stadtnetz sind auch (noch) nicht veröffentlichte Daten verfügbar.
 #' add(1, 1)
 #' @export
 
-usteR_data_directory <- function() {
+data_directory <- function() {
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
     if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
       directory <- read.csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
@@ -23,7 +23,7 @@ usteR_data_directory <- function() {
 #' add(1, 1)
 #' @export
 
-usteR_load_data <- function(id) {
+load_data <- function(id) {
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
     if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
       directory <- read.csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
