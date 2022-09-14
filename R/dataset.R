@@ -33,7 +33,11 @@ load_data <- function(id) {
   }
 
   directory<- dplyr::filter(directory, ID==id)
-  data <- read.csv(as.character(directory$URL))
+  if(as.character(directory$Format=="csv")){
+    data <- read.csv(as.character(directory$URL))
+  } else if (as.character(directory$Format=="xls")){
+    data <- readxl::read_excel(as.character(directory$URL))
+  }
   print(data)
    }
 
