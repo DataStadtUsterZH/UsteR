@@ -54,7 +54,7 @@ load_data <- function(id) {
     file.remove(filename)
   } else if (as.character(directory$Format=="xls")){
     filename <- tempfile()
-    download.file(url = as.character(directory$URL), destfile = filename, method = lade_methode)
+    download.file(url = as.character(directory$URL), destfile = filename, method = lade_methode, mode="wb")
     data <- readxl::read_excel(filename)
     file.remove(filename)
   }
