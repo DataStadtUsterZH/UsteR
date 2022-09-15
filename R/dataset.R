@@ -5,12 +5,25 @@
 #' @export
 
 data_directory <- function() {
+  # Methode für Laden definieren
+  lade_methode <- "auto"
+  if(dir.exists("S:\\Arbeitsbereiche")) {
+    lade_methode <- "wininet"
+  }
+
+  # Verzeichnis laden
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
-    if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
-      directory <- readr::read_csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
+    if(file.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\usteR\\verzeichnis.csv")){
+      filename <- tempfile()
+      download.file(url = "file://S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\usteR\\verzeichnis.csv", destfile = filename, method = lade_methode)
+      directory <- readr::read_csv(filename)
+      file.remove(filename)
     }
   } else {
-    directory <- readr::read_csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
+    filename <- tempfile()
+    download.file(url = "https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv", destfile = filename, method = lade_methode)
+    directory <- readr::read_csv(filename)
+    file.remove(filename)
   }
   print(directory)
   }
