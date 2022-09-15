@@ -33,9 +33,9 @@ load_data <- function(id) {
 
   # Verzeichnis laden
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
-    if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/verzeichnis.csv")){
+    if(file.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\usteR\\verzeichnis.csv")){
       filename <- tempfile()
-      download.file(url = "S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/verzeichnis.csv", destfile = filename, method = lade_methode)
+      download.file(url = "file://S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\usteR\\verzeichnis.csv", destfile = filename, method = lade_methode)
       directory <- readr::read_csv(filename)
       file.remove(filename)
     }
