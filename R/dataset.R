@@ -1,6 +1,6 @@
 #' Verzeichnis von Datensätzen
 #'
-#' @return Ein Verzeichnis der verfügbaren Daten. Bei Nutzung im Stadtnetz sind auch (noch) nicht veröffentlichte Daten verfügbar.
+#' @return Ein Verzeichnis der verfügbaren Daten über die Stadt Uster. Bei Nutzung im Stadtnetz sind auch (noch) nicht veröffentlichte Daten verfügbar.
 #' add(1, 1)
 #' @export
 
