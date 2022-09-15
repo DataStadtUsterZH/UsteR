@@ -26,22 +26,22 @@ data_directory <- function() {
 load_data <- function(id) {
 
   # Methode für Laden definieren
-  lade_methode <- ""
+  lade_methode <- "auto"
   if(dir.exists("S:\\Arbeitsbereiche")) {
     lade_methode <- "wininet"
   }
 
   # Verzeichnis laden
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
-    if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
+    if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/verzeichnis.csv")){
       filename <- tempfile()
-      download.file(url = as.character(directory$URL), destfile = filename, method = lade_methode)
+      download.file(url = "S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/verzeichnis.csv", destfile = filename, method = lade_methode)
       directory <- readr::read_csv(filename)
       file.remove(filename)
     }
   } else {
     filename <- tempfile()
-    download.file(url = as.character(directory$URL), destfile = filename, method = lade_methode)
+    download.file(url = "https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv", destfile = filename, method = lade_methode)
     directory <- readr::read_csv(filename)
     file.remove(filename)
   }
