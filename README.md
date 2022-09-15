@@ -15,6 +15,7 @@ install.packages("S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/usteR_0.0.0.9
   }
 install_github("DataStadtUsterZH/UsteR")
 }
+```
 
 ## Deutsch
 
