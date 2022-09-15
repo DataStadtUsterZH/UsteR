@@ -26,7 +26,7 @@ data_directory <- function() {
 load_data <- function(id) {
 
   # Methode für Laden definieren
-  lade_methode <- "auto"
+  lade_methode <- ""
   if(dir.exists("S:\\Arbeitsbereiche")) {
     lade_methode <- "wininet"
   }
