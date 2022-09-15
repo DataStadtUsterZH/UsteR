@@ -2,6 +2,20 @@
 
 ## English
 
+### Installation
+**usteR** is not on CRAN, but it's easy to install the package directly from GitHub using [devtools](http://cran.r-project.org/web/packages/devtools/index.html). If you use R in the city administration, you must use the internal version. The following script checks this and always installs the correct version.
+
+```R
+if(file.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\usteR\\usteR_0.0.0.9000.tar.gz")){
+install.packages("S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/usteR_0.0.0.9000.tar.gz", repos = NULL, type = "source")
+} else {
+    if (!require("devtools")) {
+    install.packages("devtools")
+    library("devtools")
+  }
+install_github("DataStadtUsterZH/UsteR")
+}
+
 ## Deutsch
 
 ### Funktionen
@@ -13,12 +27,16 @@
 
 ### Installation
 
-**usteR** isn't on CRAN, but it's easy to install directly from GitHub using [devtools](http://cran.r-project.org/web/packages/devtools/index.html):
+**usteR** ist nicht auf CRAN, aber es ist einfach das Package direkt von GitHub mit [devtools](http://cran.r-project.org/web/packages/devtools/index.html) zu installieren. Wenn du R in der Stadtverwaltung nutzt, musst du die interne Version nutzten. Mit dem folgenden Skript wird dies geprüft und jederzeit die richtige Version installiert.
 
 ```R
-if (!require("devtools")) {
-  install.packages("devtools")
-  library("devtools")
-}
+if(file.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\usteR\\usteR_0.0.0.9000.tar.gz")){
+install.packages("S:/Arbeitsbereiche/Open-Data-und-Statistik/usteR/usteR_0.0.0.9000.tar.gz", repos = NULL, type = "source")
+} else {
+    if (!require("devtools")) {
+    install.packages("devtools")
+    library("devtools")
+  }
 install_github("DataStadtUsterZH/UsteR")
+}
 ```
