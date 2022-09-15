@@ -7,10 +7,10 @@
 data_directory <- function() {
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
     if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
-      directory <- read.csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
+      directory <- readr::read_csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
     }
   } else {
-    directory <- read.csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
+    directory <- readr::read_csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
   }
   print(directory)
   }
@@ -26,15 +26,15 @@ data_directory <- function() {
 load_data <- function(id) {
   if(dir.exists("S:\\Arbeitsbereiche\\Open-Data-und-Statistik")){
     if(file.exists("S:/Arbeitsbereiche/Open-Data-und-Statistik/Data/verzeichnis.csv")){
-      directory <- read.csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
+      directory <- readr::read_csv("S:\\Arbeitsbereiche\\Open-Data-und-Statistik\\Data\\verzeichnis.csv")
     }
   } else {
-    directory <- read.csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
+    directory <- readr::read_csv("https://raw.githubusercontent.com/DataStadtUsterZH/DataDirectory/main/verzeichnis.csv")
   }
 
   directory<- dplyr::filter(directory, ID==id)
   if(as.character(directory$Format=="csv")){
-    data <- read_csv(as.character(directory$URL))
+    data <- readr::read_csv(as.character(directory$URL))
   } else if (as.character(directory$Format=="xls")){
     filename <- tempfile()
     download.file(as.character(directory$URL),filename)
